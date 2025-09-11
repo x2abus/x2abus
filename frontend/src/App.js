@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -11,18 +11,25 @@ import Pricing from "./components/Pricing";
 import Comparison from "./components/Comparison";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import LeadFunnel from "./components/LeadFunnel";
 
 const LandingPage = () => {
+  const [showLeadFunnel, setShowLeadFunnel] = useState(false);
+
   return (
     <div className="min-h-screen">
-      <Header />
-      <Hero />
+      <Header onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
+      <Hero onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <LiveDemo />
       <Features />
       <Pricing />
       <Comparison />
       <Testimonials />
       <Footer />
+      
+      {showLeadFunnel && (
+        <LeadFunnel onClose={() => setShowLeadFunnel(false)} />
+      )}
     </div>
   );
 };
