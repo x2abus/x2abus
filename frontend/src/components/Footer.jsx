@@ -58,11 +58,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-orange-500" />
-                <span className="text-gray-300">info@windsoronline.com</span>
+                <span className="text-gray-300">windsoronlineservices@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-orange-500" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">(519) 917-4577</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={18} className="text-orange-500" />
