@@ -89,6 +89,7 @@ const Hero = ({ onOpenLeadFunnel }) => {
             </motion.button>
 
             <motion.button
+              onClick={onOpenLeadFunnel}
               className="w-full sm:w-auto bg-white text-gray-700 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg border-2 border-gray-200 hover:border-orange-500 hover:text-orange-500 transition-all duration-200 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
