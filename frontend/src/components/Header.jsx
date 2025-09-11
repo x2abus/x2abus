@@ -103,7 +103,10 @@ const Header = ({ onOpenLeadFunnel }) => {
                 <button className="text-gray-700 hover:text-orange-500 font-medium py-2 text-left">
                   Login
                 </button>
-                <button className="bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors duration-200">
+                <button 
+                  onClick={onOpenLeadFunnel}
+                  className="bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors duration-200"
+                >
                   Get Free Assessment
                 </button>
               </div>
