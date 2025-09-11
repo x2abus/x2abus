@@ -139,6 +139,7 @@ const Testimonials = ({ onOpenLeadFunnel }) => {
             Join the growing community of businesses transforming their operations with AI. Your success story could be next.
           </p>
           <motion.button
+            onClick={onOpenLeadFunnel}
             className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all duration-200 hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
