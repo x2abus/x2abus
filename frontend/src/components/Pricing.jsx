@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Check, Star, ArrowRight } from 'lucide-react';
 import { mockPricingPlans } from '../data/mock';
 
-const Pricing = () => {
+const Pricing = ({ onOpenLeadFunnel }) => {
   return (
     <section id="pricing" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6 w-full max-w-full">
