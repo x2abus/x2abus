@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ onOpenLeadFunnel }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const logoUrl = "https://customer-assets.emergentagent.com/job_smartwrite-pro/artifacts/kfg8aba2_1000014458_20250803_123026_0000.png";
