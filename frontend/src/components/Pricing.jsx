@@ -5,20 +5,20 @@ import { mockPricingPlans } from '../data/mock';
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="pricing" className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-6 w-full max-w-full">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Choose the perfect plan for your business. All plans include our core AI tools and dedicated support.
           </p>
         </motion.div>
