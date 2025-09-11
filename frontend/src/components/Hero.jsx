@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Zap, Target } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ onOpenLeadFunnel }) => {
   const scrollToDemo = () => {
     document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
   };
