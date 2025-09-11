@@ -116,7 +116,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={ once: true }}
+              viewport={{ once: true }}
             >
               <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
               <div className="text-orange-100">Support Available</div>
