@@ -23,7 +23,7 @@ const LandingPage = () => {
       <LiveDemo />
       <Features onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <Pricing onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
-      <Comparison />
+      <Comparison onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <Testimonials />
       <Footer />
       
