@@ -137,6 +137,7 @@ const Comparison = ({ onOpenLeadFunnel }) => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <motion.button
+              onClick={onOpenLeadFunnel}
               className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all duration-200 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -144,6 +145,7 @@ const Comparison = ({ onOpenLeadFunnel }) => {
               Start Free Trial
             </motion.button>
             <motion.button
+              onClick={onOpenLeadFunnel}
               className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-50 transition-all duration-200 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
