@@ -7,7 +7,7 @@ const iconMap = {
   Wrench, Users, Shield, Zap, Target, Camera
 };
 
-const Features = () => {
+const Features = ({ onOpenLeadFunnel }) => {
   return (
     <section id="features" className="py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6 w-full max-w-full">
