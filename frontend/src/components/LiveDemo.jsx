@@ -64,33 +64,33 @@ const LiveDemo = () => {
   const isFormValid = formData.businessName && formData.industry && formData.targetAudience && formData.currentChallenges;
 
   return (
-    <section id="demo" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="demo" className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-6 w-full max-w-full">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16 px-2"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center space-x-2 bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Sparkles size={16} />
+            <div className="inline-flex items-center space-x-2 bg-orange-100 text-orange-800 px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-medium mb-4 md:mb-6">
+              <Sparkles size={14} />
               <span>Free Live Demo - No Credit Card Required</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
               See AI in Action for Your Business
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Enter your business details below and watch AI generate custom tools specifically for your company in real-time.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Form Section */}
             <motion.div
-              className="bg-gray-50 rounded-2xl p-8"
+              className="bg-gray-50 rounded-2xl p-6 md:p-8"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
