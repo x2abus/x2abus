@@ -98,6 +98,7 @@ const Pricing = ({ onOpenLeadFunnel }) => {
             Not sure which plan is right for you? Get a free consultation.
           </p>
           <motion.button
+            onClick={onOpenLeadFunnel}
             className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-50 transition-all duration-200 hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
