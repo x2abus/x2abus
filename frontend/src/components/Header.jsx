@@ -60,6 +60,7 @@ const Header = ({ onOpenLeadFunnel }) => {
               Login
             </motion.button>
             <motion.button
+              onClick={onOpenLeadFunnel}
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition-all duration-200 hover:scale-105"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
