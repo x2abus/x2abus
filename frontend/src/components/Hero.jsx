@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/4 w-12 h-12 md:w-16 md:h-16 bg-orange-400 rounded-full opacity-10 animate-pulse delay-500"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 py-20 relative z-10 section-container">
+      <div className="container mx-auto px-4 md:px-6 py-20 relative z-10 w-full max-w-full">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
