@@ -9,20 +9,20 @@ const iconMap = {
 
 const Features = () => {
   return (
-    <section id="features" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="features" className="py-16 md:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 md:px-6 w-full max-w-full">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16 px-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Everything You Need to Scale with AI
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             From custom CRM systems to AI-generated content, we provide the complete toolkit for modern businesses.
           </p>
         </motion.div>
