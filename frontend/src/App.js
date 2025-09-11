@@ -22,7 +22,7 @@ const LandingPage = () => {
       <Hero onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <LiveDemo />
       <Features onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
-      <Pricing />
+      <Pricing onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <Comparison />
       <Testimonials />
       <Footer />
