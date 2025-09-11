@@ -38,6 +38,70 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class LeadFunnelSubmission(BaseModel):
+    firstName: str
+    lastName: str
+    email: str
+    phone: str = ""
+    company: str
+    role: str
+    businessGoals: str
+    currentChallenges: str
+    budget: str
+    timeline: str
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
+
+def send_lead_email(lead_data: LeadFunnelSubmission):
+    """Send lead information to Windsor Online Services email"""
+    try:
+        # Email configuration (using Gmail SMTP as example)
+        # In production, you would use proper email service credentials
+        smtp_server = "smtp.gmail.com"
+        smtp_port = 587
+        
+        # Create message
+        msg = MimeMultipart()
+        msg['From'] = "noreply@windsoronlineservices.com"
+        msg['To'] = "windsoronlineservices@gmail.com"
+        msg['Subject'] = f"New Lead: {lead_data.firstName} {lead_data.lastName} from {lead_data.company}"
+        
+        # Create email body
+        body = f"""
+New Lead Submission from Windsor AI Landing Page
+
+CONTACT INFORMATION:
+Name: {lead_data.firstName} {lead_data.lastName}
+Email: {lead_data.email}
+Phone: {lead_data.phone if lead_data.phone else 'Not provided'}
+Company: {lead_data.company}
+Role: {lead_data.role}
+
+BUSINESS DETAILS:
+Business Goals: {lead_data.businessGoals}
+Current Challenges: {lead_data.currentChallenges}
+Budget: {lead_data.budget}
+Timeline: {lead_data.timeline}
+
+Submitted at: {lead_data.timestamp}
+
+---
+This lead was generated from the Windsor AI landing page.
+Follow up within 24 hours for best conversion rates.
+        """
+        
+        msg.attach(MimeText(body, 'plain'))
+        
+        # For demo purposes, we'll just log the email content
+        # In production, you would configure actual SMTP credentials
+        logger.info(f"Lead email would be sent to windsoronlineservices@gmail.com:")
+        logger.info(body)
+        
+        return True
+        
+    except Exception as e:
+        logger.error(f"Error sending lead email: {str(e)}")
+        return False
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
