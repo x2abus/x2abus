@@ -35,8 +35,8 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-gray-900 text-white">
       {/* Main Footer */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16 w-full max-w-full">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 md:gap-8">
           {/* Company Info */}
           <motion.div
             className="lg:col-span-1"
