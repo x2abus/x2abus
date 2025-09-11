@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Star, Quote } from 'lucide-react';
 import { mockTestimonials } from '../data/mock';
 
-const Testimonials = () => {
+const Testimonials = ({ onOpenLeadFunnel }) => {
   return (
     <section id="testimonials" className="py-20 bg-white">
       <div className="container mx-auto px-6">
