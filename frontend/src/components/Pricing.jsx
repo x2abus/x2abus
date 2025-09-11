@@ -70,6 +70,7 @@ const Pricing = ({ onOpenLeadFunnel }) => {
 
               {/* CTA Button */}
               <motion.button
+                onClick={plan.buttonText === "Contact Sales" ? onOpenLeadFunnel : onOpenLeadFunnel}
                 className={`w-full py-4 rounded-full font-semibold text-lg transition-all duration-200 flex items-center justify-center space-x-2 ${
                   plan.popular
                     ? 'bg-orange-500 text-white hover:bg-orange-600'
