@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Check, X, Crown } from 'lucide-react';
 import { mockCompetitors } from '../data/mock';
 
-const Comparison = () => {
+const Comparison = ({ onOpenLeadFunnel }) => {
   const featureKeys = Object.keys(mockCompetitors[0].features);
 
   return (
