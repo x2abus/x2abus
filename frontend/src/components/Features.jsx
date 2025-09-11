@@ -112,6 +112,7 @@ const Features = ({ onOpenLeadFunnel }) => {
             Get a free AI assessment and discover how these tools can revolutionize your operations.
           </p>
           <motion.button
+            onClick={onOpenLeadFunnel}
             className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all duration-200 hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
