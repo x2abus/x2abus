@@ -26,7 +26,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <Sparkles size={14} className="md:w-4 md:h-4" />
-            <span className="mobile-text-sm">Trusted by 1000+ Businesses Worldwide</span>
+            <span>Trusted by 1000+ Businesses Worldwide</span>
           </motion.div>
 
           {/* Main Headline */}
