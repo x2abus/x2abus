@@ -119,6 +119,38 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+@api_router.post("/lead-funnel")
+async def submit_lead_funnel(lead_data: LeadFunnelSubmission):
+    """Handle lead funnel form submission"""
+    try:
+        # Store lead in database
+        lead_dict = lead_data.dict()
+        await db.leads.insert_one(lead_dict)
+        
+        # Send email notification
+        email_sent = send_lead_email(lead_data)
+        
+        if email_sent:
+            logger.info(f"New lead received from {lead_data.firstName} {lead_data.lastName} ({lead_data.email})")
+            return {"success": True, "message": "Lead submission received successfully"}
+        else:
+            logger.warning(f"Lead stored but email notification failed for {lead_data.email}")
+            return {"success": True, "message": "Lead submission received, email notification pending"}
+            
+    except Exception as e:
+        logger.error(f"Error processing lead submission: {str(e)}")
+        return {"success": False, "message": "Error processing submission"}
+
+@api_router.get("/leads")
+async def get_leads():
+    """Get all leads for admin purposes"""
+    try:
+        leads = await db.leads.find().to_list(1000)
+        return {"success": True, "leads": leads}
+    except Exception as e:
+        logger.error(f"Error fetching leads: {str(e)}")
+        return {"success": False, "message": "Error fetching leads"}
+
 # Include the router in the main app
 app.include_router(api_router)
 
