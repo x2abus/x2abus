@@ -30,7 +30,7 @@ class ForgePilotTester:
             # Start server using the virtual environment
             cmd = [
                 f"{self.venv_path}/bin/python", "-m", "uvicorn", 
-                "backend.server:app", "--host", "0.0.0.0", "--port", "8010"
+                "backend.server:app", "--host", "0.0.0.0", "--port", "8011"
             ]
             
             # Start server in background
