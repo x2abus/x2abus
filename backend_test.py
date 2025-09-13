@@ -15,7 +15,7 @@ from typing import Dict, Any, Optional
 
 class ForgePilotTester:
     def __init__(self):
-        self.base_url = "http://localhost:8010"
+        self.base_url = "http://localhost:8011"
         self.server_process = None
         self.venv_path = "/app/agents/ForgePilot/.venv"
         
