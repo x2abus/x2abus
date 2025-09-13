@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the standalone ForgePilot agent backend endpoints: health check, message processing with positive/negative cases, and memory retrieval functionality."
+user_problem_statement: "Run an automated UI test for the Next.js ForgePilot app at /app/agents/ForgePilot/frontend. Test header rendering, status badge, prompt submission, chat response validation, and right-side panels functionality."
 
 backend:
   - task: "ForgePilot Health Endpoint Testing"
