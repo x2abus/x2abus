@@ -152,6 +152,14 @@ async def get_leads():
         return {"success": False, "message": "Error fetching leads"}
 
 # Include the router in the main app
+# Mount ForgePilot router
+try:
+    from .forgepilot.router import router as forgepilot_router
+    app.include_router(forgepilot_router)
+except Exception as e:
+    logger = logging.getLogger(__name__)
+    logger.error(f"ForgePilot router failed to mount: {e}")
+
 app.include_router(api_router)
 
 app.add_middleware(
