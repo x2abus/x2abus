@@ -12,6 +12,7 @@ import Comparison from "./components/Comparison";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import LeadFunnel from "./components/LeadFunnel";
+import ForgePilot from "./forgepilot/ForgePilot";
 
 const LandingPage = () => {
   const [showLeadFunnel, setShowLeadFunnel] = useState(false);
@@ -26,7 +27,6 @@ const LandingPage = () => {
       <Comparison onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <Testimonials onOpenLeadFunnel={() => setShowLeadFunnel(true)} />
       <Footer />
-      
       {showLeadFunnel && (
         <LeadFunnel onClose={() => setShowLeadFunnel(false)} />
       )}
@@ -40,6 +40,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/forgepilot" element={<ForgePilot />} />
         </Routes>
       </BrowserRouter>
     </div>

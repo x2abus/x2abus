@@ -2,8 +2,11 @@ from __future__ import annotations
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Dict
 import os
+from io import BytesIO
+import zipfile
+from fastapi.responses import StreamingResponse
 
 from .agent import ForgePilotAgent, SimulatedTools
 from .memory import MongoMemory
@@ -55,3 +58,22 @@ async def message(req: MessageReq):
 async def get_memory(session_id: str, limit: int = 100):
     events = await memory.list(session_id, limit=limit)
     return {"session_id": session_id, "events": events}
+
+
+class DownloadReq(BaseModel):
+    manifest: Dict[str, str]
+    project_name: Optional[str] = "forgepilot_scaffold"
+
+
+@router.post("/download")
+async def download_zip(req: DownloadReq):
+    if not req.manifest:
+        raise HTTPException(400, "manifest is required")
+    buf = BytesIO()
+    with zipfile.ZipFile(buf, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for path, content in req.manifest.items():
+            zf.writestr(path, content or "")
+    buf.seek(0)
+    filename = f"{req.project_name or 'forgepilot_scaffold'}.zip"
+    headers = {"Content-Disposition": f"attachment; filename={filename}"}
+    return StreamingResponse(buf, media_type="application/zip", headers=headers)
