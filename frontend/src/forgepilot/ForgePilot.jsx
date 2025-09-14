@@ -154,6 +154,14 @@ export default function ForgePilot() {
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
 
   useEffect(() => {
+    // Auto-connect on mount
+    (async () => {
+      try {
+        const base = process.env.REACT_APP_BACKEND_URL;
+        await fetch(`${base}/api/forgepilot/connect`, { method: 'POST' });
+      } catch {}
+    })();
+
     const ping = async () => {
       try {
         const base = process.env.REACT_APP_BACKEND_URL;
