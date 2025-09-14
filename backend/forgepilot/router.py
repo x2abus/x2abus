@@ -30,7 +30,14 @@ class MessageReq(BaseModel):
 
 @router.get("/health")
 async def health():
-    return {"ok": True, "module": "forgepilot", "allow_execute": False}
+    ok = await memory.ping()
+    return {"ok": ok, "module": "forgepilot", "allow_execute": False}
+
+
+@router.post("/connect")
+async def connect():
+    ok = await memory.ping()
+    return {"ok": ok, "connected": ok}
 
 
 @router.post("/message")

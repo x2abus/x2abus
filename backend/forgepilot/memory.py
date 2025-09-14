@@ -23,6 +23,22 @@ class MongoMemory:
         self.db = self.client[db_name]
         self.col = self.db["forgepilot_events"]
 
+    async def ensure_indexes(self) -> None:
+        try:
+            await self.col.create_index("session_id")
+            await self.col.create_index("timestamp")
+        except Exception:
+            pass
+
+    async def ping(self) -> bool:
+        try:
+            # Ping the admin database to ensure the connection works
+            await self.client.admin.command("ping")
+            await self.ensure_indexes()
+            return True
+        except Exception:
+            return False
+
     async def add(self, session_id: str, role: str, type_: str, content: Dict[str, Any]):
         ev = MemoryEvent(session_id=session_id, timestamp=time.time(), role=role, type=type_, content=content)
         await self.col.insert_one(ev.model_dump(by_alias=False))
