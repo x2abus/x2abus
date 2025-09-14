@@ -206,6 +206,21 @@ export default function ForgePilot() {
       <div className="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <div className="flex items-center justify-between mb-3">
+            <button
+              onClick={async () => {
+                try {
+                  const base = process.env.REACT_APP_BACKEND_URL;
+                  await fetch(`${base}/api/forgepilot/connect`, { method: 'POST' });
+                  // re-ping to update badge
+                  const r = await fetch(`${base}/api/forgepilot/health`);
+                  const data = await r.json();
+                  setStatus(data?.ok ? 'online' : 'degraded');
+                } catch { setStatus('offline'); }
+              }}
+              className="text-xs px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              Connect
+            </button>
             <h1 className="text-2xl font-semibold">ForgePilot</h1>
             <span className="text-xs text-gray-600 dark:text-gray-300">Mobile-friendly • Responsive</span>
           </div>
