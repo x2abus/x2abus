@@ -37,6 +37,7 @@ const Header = ({ onOpenLeadFunnel }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/forgepilot" className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-200">App</Link>
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
